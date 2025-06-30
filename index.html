@@ -1,183 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- FIM GOOGLE FONTES -->
-    <!-- BOOTSTRAP ICONS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <!-- FIM BOOTSTRAP ICONS -->
-    <link rel="stylesheet" href="style.css">
-
-    <script src="menu.js" defer></script>
-
-    <title>Pedro Lima</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="menu.js" defer></script>
+  <title>Pedro Lima - Portfólio</title>
 </head>
 <body>
-    
-    <header>
-        <div class="interface">
-             <nav class="menu-desktop">
-                <ul>
-                    <li><a href="#indice">Início</a></li>
-                    <li><a href="#espec">Especialidades</a></li>
-                    <li><a href="#sbr">Sobre</a></li>
-                    <li><a href="#project">Projetos</a></li>
-                </ul>
-            </nav>
 
-            <div class="btn-contato">
-                <a href="https://linktr.ee/DeveSecPedroLima" target="_blank">
-                    <button>Contato</button>
-                </a>
-            </div><!--btn-contato-->
+  <header class="container">
+    <div class="logo">Pedro Lima</div>
 
-            <div class="btn-abrir-menu" id="btn-menu">
-                <i class="bi bi-list"></i>
-            </div>
+    <nav class="nav-links">
+      <a href="#home" class="nav-link">Início</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#about" class="nav-link">Sobre</a>
+      <a href="#projects" class="nav-link">Projetos</a>
+      <a href="#contact" class="nav-link">Contato</a>
+    </nav>
 
-            <div class="menu-mobile" id="menu-mobile">
-                <div class="btn-fechar">
-                    <i class="bi bi-x-lg"></i>
-                </div>
+    <button id="btn-menu" aria-label="Abrir menu"><i class="bi bi-list"></i></button>
+    <button id="btn-theme-toggle" aria-label="Alternar tema"><i class="bi bi-moon-fill"></i></button>
+  </header>
 
-                <nav>
-                    <ul>
-                        <li><a href="">Início</a></li>
-                        <li><a href="#espec">Especialidades</a></li>
-                        <li><a href="#sbr">Sobre</a></li>
-                        <li><a href="#project">Projetos</a></li>
-                        <li><a href="https://linktr.ee/DeveSecPedroLima" target="_blank">Contato</a></li>
-                    </ul>
-                </nav>
+  <div id="mobile-menu" aria-hidden="true">
+    <button id="btn-close-menu" aria-label="Fechar menu"><i class="bi bi-x-lg"></i></button>
+    <nav>
+      <a href="#home" class="nav-link">Início</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#about" class="nav-link">Sobre</a>
+      <a href="#projects" class="nav-link">Projetos</a>
+      <a href="#contact" class="nav-link">Contato</a>
+    </nav>
+  </div>
 
-            </div><!--menu-mobile-->
-            <div class="overlay-menu" id="overlay-menu"></div>
-        </div><!--interface-->
-    </header>
+  <section id="home" class="hero container">
+    <div class="hero-text">
+      <h1>Olá, eu sou <span>Pedro Lima</span></h1>
+      <p>Estudante de Ciência da Computação | Fullstack Developer | Freelancer apaixonado por tecnologia e soluções digitais modernas.</p>
+      <a href="#contact" class="btn-primary">Vamos conversar</a>
+    </div>
+    <div class="hero-image">
+      <img src="images/profile.jpg" alt="Foto do Pedro Lima" />
+    </div>
+  </section>
 
-    <main>
-        <section class="topo-do-site">
-            <div class="interface">
-                <div class="flex">
-                    <div class="txt-topo-site">
-                        <h1>BEM VINDO AO MEU PORTIFÓLIO<span>.</span></h1>
-                        <p>TRANSFORMANDO SEU PROBLEMA EM SOLUÇÃO DIGITAL</p>
-                        <div class="btn-contato">
-                            <a href="https://linktr.ee/DeveSecPedroLima" target="_blank">
-                                <button>Entre em contato</button>
-                            </a>
-                        </div>
-                    </div><!--txt-topo-site-->
+  <section id="skills" class="skills-section container">
+    <h2>Minhas <span>Skills</span></h2>
+    <div class="skills-list">
+      <div class="skill">
+        <h3>Front-end</h3>
+        <p>HTML, CSS, JavaScript, TypeScript, React, AngularJS</p>
+        <div class="progress-bar" data-percent="95"><span></span></div>
+      </div>
+      <div class="skill">
+        <h3>Back-end & APIs</h3>
+        <p>Node.js, Spring Boot, Java, DevSecOps, PostgreSQL, Git, Docker</p>
+        <div class="progress-bar" data-percent="85"><span></span></div>
+      </div>
+      <div class="skill">
+        <h3>Mobile</h3>
+        <p>Flutter, React Native, Kotlin</p>
+        <div class="progress-bar" data-percent="70"><span></span></div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="img-topo-site">
-                        <img src="images/pessoa.png" alt="">
-                    </div><!--img-topo-site-->
-                </div><!--flex-->
-            </div><!--interface-->
-        </section><!--topo-do-site-->
+  <section id="about" class="about-section container">
+    <h2>Sobre <span>mim</span></h2>
+    <p>
+      Sou estudante de Ciência da Computação, com sólida experiência em desenvolvimento web, freelancing e automações.
+      Recentemente, trabalhei em um projeto de tratamento de superfícies e pinturas navais, responsável pelo front-end, focando em responsividade e experiência do usuário.
+      Minha trajetória inclui desenvolvimento fullstack, criação de chatbots profissionais e colaboração com equipes comprometidas.
+    </p>
+    <p>
+      Tenho certificações em segurança cibernética, hacking ético, programação orientada a objetos, Linux Essentials e inglês para negócios, sempre buscando aprimorar minhas habilidades técnicas e profissionais.
+    </p>
+    <div class="social-buttons">
+      <a href="https://github.com/DevPedroLimaB" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/pedrolimasecedev" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.instagram.com/devpedrolima/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    </div>
+  </section>
 
-        <section id="espec" class="especiliadades">
-            <div class="interface">
-                <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
-                <div class="flex">
-                    <div class="especialidades-box">
-                        <i class="bi bi-code-square"></i>
-                        <h3>Front-end</h3>
-                        <p>Tenho experiência no desenvolvimento de interfaces simplificadas e responsivas, utilizando tecnologias como HTML, CSS e JavaScript, além de frameworks populares como React e Vue.js. Priorizo a criação de experiências de usuário intuitivas e atraentes, garantindo que os designs sejam funcionais e visualmente impactantes..</p>
-                    </div><!--especialidades-box-->
+  <section id="projects" class="projects-section container">
+    <h2>Meus <span>Projetos</span></h2>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+      <button class="filter-btn" data-filter="Front-end">Front-end</button>
+      <button class="filter-btn" data-filter="automation">Automação</button>
+    </div>
+    <div class="projects-grid">
+      <!-- Cards dos projetos -->
+      <div class="project-card fullstack">
+        <img src="images/projeto5.png" alt="Carteira de Cripto moeda" />
+        <div class="project-info">
+          <h3>RVL-Grupo</h3>
+          <p>Site para uma empresa de pinturas navais | HTML | CSS | JS | JAVA | SPRING BOOT </p>
+        </div>
+      </div>
 
-                    <div class="especialidades-box">
-                        <i class="bi bi-android"></i>
-                        <h3>Desenvolvimento Mobile</h3>
-                        <p>Sou proficiente no desenvolvimento de aplicativos, utilizando ferramentas como Flutter, React Native, .</p>
-                    </div><!--especialidades-box-->
+      <div class="project-card Front-end">
+        <img src="images/projeto4.png" alt="Projeto meteorológico" />
+        <div class="project-info">
+          <h3>Cri.ative</h3>
+          <p>Projeto ganhador de Hackathon | HTML | CSS | JS </p>
+        </div>
+      </div>
 
-                    <div class="especialidades-box">
-                        <i class="bi bi-shield-lock-fill"></i>
-                        <h3>Análise e Segurança de Redes</h3>
-                        <p>Tenho conhecimentos em análise de tráfego de rede e identificação de vulnerabilidades. Hajo na configuração de sistemas de segurança, firewalls e práticas para proteção de dados, além de implementar estratégias para prevenção contra ataques cibernéticos, como testes de penetração e auditorias de segurança.</p>
-                    </div><!--especialidades-box-->
-                </div><!--flex-->
-            </div><!--interface-->
-        </section><!--especiliadades-->
+      <div class="project-card automation">
+        <img src="images/cnvrs.png" alt="Cri.ative - Hackathon" />
+        <div class="project-info">
+          <h3>Automatização de Whatsapp</h3>
+          <p>Chatbot | DOCKER | JS | PYTHON | AWS </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section class="sobre" id ="sbr">
-            <div class="interface">
-                <div class="flex">
-                    <div class="img-sobre">
-                        <img src="images/foto.png" alt="">
-                    </div><!--img-sobre-->
+  <section id="contact" class="contact-section container">
+    <h2>Fale <span>Comigo</span></h2>
+    <form id="contact-form" novalidate>
+      <input type="text" name="name" placeholder="Seu nome completo" required />
+      <input type="email" name="email" placeholder="Seu e-mail" required />
+      <input type="tel" name="phone" placeholder="Seu celular" />
+      <textarea name="message" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+      <p id="form-feedback" role="alert" aria-live="polite"></p>
+    </form>
+  </section>
 
-                    <div class="txt-sobre">
-                        <h2>MUITO PRAZER, <span>SOU PEDRO LIMA.</span></h2>
-                        <p>Apaixonado por tecnologia e desenvolvimento Full Stack, sou estudante de Ciência da Computação (4º período) na Faculdade Nova Roma e busco minha primeira oportunidade profissional.</p>
-                        <p>Desenvolvimento Web (Front & Back): HTML, CSS, JavaScript, Vue.js, Java, Node.js, Python, Kotlin |   Banco de Dados: Microsoft SQL Server |  Soft Skills: Liderança, Comunicação, Excel, Análise de Perigo</p>
-                        <div class="btn-social">
-                            <a href="https://www.instagram.com/devpedrolima/" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
-                            <a href="https://github.com/DevPedroLimaB"><button><i class="bi bi-github" target="_blank" ></i></button></a>
-                            <a href="https://www.linkedin.com/in/pedrolimasecedev" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
-                        </div><!--btn-social-->
-                    </div><!--txt-sobre-->
-                </div><!--flex-->
-            </div><!--interface-->
-        </section><!--sobre-->
-
-        <section id= "project" class="portfolio">
-            <div class="interface">
-                <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
-                <div class="flex">
-                    <div class="img-port" style="background-image: url(images/projeto2.png);">
-                        <div class="overlay">Carteira de Cripto moeda <br> Kotlin | XML</div>
-                    </div>
-                    <div class="img-port" style="background-image: url(images/projeto3.png);">
-                        <div class="overlay">Projeto meteorológico <br> HTML | CSS | JS | DOCKER | NODE </div>
-                    </div>
-                    <div class="img-port" style="background-image: url(images/projeto4.png);">
-                        <div class="overlay">Cri.ative <br> Projeto ganhador de Hackthon <br> HTML | CSS | JS | PYTHON | NODE </div>
-                    </div>
-                </div><!--flex-->
-            </div><!--interface-->
-        </section><!--portfolio-->
-
-        <section class="formulario">
-            <div class="interface">
-                <h2 class="titulo">FALA <span>COMIGO.</span></h2>
-
-                <form action="">
-                    <input type="text" name="" id="" placeholder="Seu nome completo:" required>
-                    <input type="text" name="" id="" placeholder="Seu e-mail:" required>
-                    <input type="text" name="" id="" placeholder="Seu celular:">
-                    <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
-                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
-                </form>
-            </div><!--interface-->
-        </section><!--formulario-->
-
-    </main>
-
-    <footer>
-        <div class="interface">
-            <div class="line-footer">
-                <div class="flex">
-                    
-                    <div class="btn-social">
-                        <a href="https://www.instagram.com/devpedrolima/"><button><i class="bi bi-instagram"></i></button></a>
-        
-                        <a href="https://www.linkedin.com/in/pedrolimasecedev"><button><i class="bi bi-linkedin"></i></button></a>
-                    </div><!--btn-social-->
-                </div>
-            </div><!--line-footer-->
-
-            <div class="line-footer borda">
-                <p><i class="bi bi-envelope-fill"></i> <a href="mailto:pedrohlimajobs@gmail.com">pedrohlimajobs@gmail.com</a></p>
-            </div><!--line-footer-->
-        </div><!--interface-->
-    </footer>
+  <button id="btn-scroll-top" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></button>
 
 </body>
 </html>

@@ -107,7 +107,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden py-4 space-y-2"
+            className="md:hidden py-4 space-y-2 bg-background-secondary/95 backdrop-blur-xl rounded-b-2xl border-t border-background-tertiary"
           >
             {navItems.map((item) => (
               <Link

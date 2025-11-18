@@ -5,7 +5,20 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
-const projects = [
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  longDescription: string;
+  tags: string[];
+  category: string;
+  highlights: string[];
+  image: string;
+  github?: string;
+  demo?: string;
+}
+
+const projects: Project[] = [
   {
     id: 1,
     title: 'RVL Grupo - Maritime Solutions Platform',

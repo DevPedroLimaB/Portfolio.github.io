@@ -107,7 +107,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden py-4 space-y-2 bg-background-secondary/95 backdrop-blur-xl rounded-b-2xl border-t border-background-tertiary"
+            className="md:hidden py-4 px-2 space-y-2 bg-background-secondary/95 backdrop-blur-xl border-t border-background-tertiary -mx-4"
           >
             {navItems.map((item) => (
               <Link
@@ -122,7 +122,7 @@ export default function Header() {
             <Link
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block btn-primary text-center mt-4"
+              className="block btn-primary text-center mt-4 mx-2"
             >
               Let's Talk
             </Link>

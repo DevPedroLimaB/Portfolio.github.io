@@ -1,48 +1,39 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata, Viewport } from 'next';
+import localFont from 'next/font/local';
+import './globals.css';
 
-const inter = Inter({ 
-  subsets: ["latin"],
+const sans = localFont({
+  src: './fonts/SchibstedGrotesk.ttf',
+  weight: '400 900',
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-sans',
 });
 
 export const metadata: Metadata = {
-  title: "Pedro Lima | Full-Stack Developer & Tech Innovator",
-  description: "Computer Science student and Full-Stack Developer specializing in modern web applications, automation, and digital solutions. Experienced in React, Next.js, Spring Boot, and cloud technologies.",
-  keywords: ["Pedro Lima", "Full-Stack Developer", "Software Engineer", "React", "Next.js", "Spring Boot", "Web Development", "Portfolio"],
-  authors: [{ name: "Pedro Lima" }],
-  creator: "Pedro Lima",
+  title: 'Pedro Lima | Desenvolvedor Full Stack',
+  description:
+    'Desenvolvedor full stack em Recife. Sistemas web, APIs e integrações com React, Node.js, Java e PostgreSQL.',
+  keywords: ['Pedro Lima', 'Desenvolvedor Full Stack', 'Full-Stack Developer', 'React', 'Node.js', 'Spring Boot', 'Recife'],
+  authors: [{ name: 'Pedro Lima' }],
   openGraph: {
-    type: "website",
-    locale: "pt_BR",
-    url: "https://devpedrolimab.github.io/",
-    title: "Pedro Lima | Full-Stack Developer & Tech Innovator",
-    description: "Computer Science student and Full-Stack Developer specializing in modern web applications, automation, and digital solutions.",
-    siteName: "Pedro Lima Portfolio",
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://devpedrolimab.github.io/Portfolio.github.io/',
+    title: 'Pedro Lima | Desenvolvedor Full Stack',
+    description: 'Sistemas web, APIs e integrações para a operação de empresas.',
+    siteName: 'Pedro Lima',
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Pedro Lima | Full-Stack Developer",
-    description: "Building modern web applications with cutting-edge technologies",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: '#E3B94A',
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`}>
-        {children}
-      </body>
+    <html lang="pt-BR">
+      <body className={sans.variable}>{children}</body>
     </html>
   );
 }

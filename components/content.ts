@@ -9,13 +9,15 @@ type Project = {
   note?: string;
 };
 
+export type Brand = 'qavah' | 'hubvision';
+
 type Job = {
   org: string;
   role: string;
   period?: string;
   body: string;
   points?: string[];
-  qavah?: boolean;
+  brand?: Brand;
 };
 
 export type Content = {
@@ -66,13 +68,17 @@ const rvlLinks = [
   { label: 'GitHub', href: 'https://github.com/DevPedroLimaB/rvl-grupo' },
 ];
 
+const saasStack = ['React', 'TypeScript', 'PostgreSQL'];
+const hackStack = ['React', 'Node.js'];
+const rvlStack = ['HTML', 'CSS', 'JavaScript', 'Java', 'Spring Boot'];
+
 export const content: Record<Lang, Content> = {
   pt: {
     nav: { projects: 'Projetos', experience: 'Experiência', about: 'Sobre', contact: 'Contato' },
     langLabel: 'Idioma',
     hero: {
-      lead: 'Desenvolvedor full stack em Recife. Construo sistemas web, APIs e integrações que a operação de uma empresa usa todo dia.',
-      sub: 'Antes do código, trabalhei com análise fiscal. Por isso começo todo projeto pelo processo, e só depois pela tela.',
+      lead: 'Desenvolvedor full stack em Recife. Construo sistemas web, APIs e integrações para empresas.',
+      sub: 'Antes do código, trabalhei com análise fiscal. Começo todo projeto pelo processo, depois pela tela.',
       primary: 'Ver projetos',
       secondary: 'Falar comigo',
     },
@@ -80,65 +86,64 @@ export const content: Record<Lang, Content> = {
       title: 'Projetos',
       items: [
         {
-          title: 'Módulos financeiros para um SaaS de contratos imobiliários',
-          context: 'Freelance pela Qavah, 2026',
-          body: 'Desenvolvi o módulo financeiro, o fluxo de salas comerciais e a área do cliente de uma plataforma B2B que gerencia contratos de imóveis comerciais. Lançamentos por contrato, várias linhas de receita e um acesso em que cada cliente vê só os próprios dados, garantido por regras no banco.',
-          stack: ['React', 'TypeScript', 'PostgreSQL', 'Edge Functions'],
-          note: 'Projeto sob contrato, código privado.',
+          title: 'SaaS B2B de gestão de contratos',
+          context: 'Freelance, 2026',
+          body: 'Módulos financeiros e área do cliente de uma plataforma de gestão.',
+          stack: saasStack,
+          note: 'Código privado.',
         },
         {
           title: 'Plataforma de acessibilidade para escolas',
-          context: 'Projeto vencedor do hackathon da faculdade',
-          body: 'Sistema que ajuda professores a criar e adaptar conteúdo para alunos com TEA e TDAH. Feito por uma equipe de quatro pessoas dentro do prazo do hackathon. Fiquei com a ponta a ponta da aplicação, do front ao back.',
-          stack: ['React', 'Node.js'],
+          context: 'Vencedor do hackathon da faculdade',
+          body: 'Ajuda professores a adaptar conteúdo para alunos com TEA e TDAH. Feita em equipe de quatro.',
+          stack: hackStack,
         },
         {
           title: 'Site institucional da RVL Grupo',
           context: 'Front-end, 2024',
-          body: 'Site de uma empresa de tratamento de superfícies e pintura naval. Cuidei do front-end inteiro: layout responsivo, performance e a forma como cada serviço é apresentado para quem contrata.',
-          stack: ['HTML', 'CSS', 'JavaScript', 'Java', 'Spring Boot'],
+          body: 'Site de uma empresa de pintura naval. Responsável pelo front-end.',
+          stack: rvlStack,
           links: rvlLinks,
         },
       ],
     },
     experience: {
       title: 'Experiência',
-      qavahLink: 'Página da Qavah no LinkedIn',
+      qavahLink: 'Qavah no LinkedIn',
       items: [
         {
           org: 'Hubvision',
           role: 'Desenvolvedor de software',
           period: '2026 até hoje',
-          body: 'Desenvolvimento e sustentação de sistemas web, integrações com ERP e soluções com IA, atendendo a operação interna e clientes da empresa.',
-          points: [
-            'Implantação junto aos clientes, com suporte e visitas presenciais, independente do tamanho da conta.',
-            'Do levantamento de requisitos à sustentação em produção.',
-          ],
+          brand: 'hubvision',
+          body: 'Sistemas web, integrações e soluções com IA para a operação e os clientes da empresa.',
         },
         {
           org: 'Qavah IO',
           role: 'Fundador',
           period: '2023 até hoje',
-          qavah: true,
-          body: 'Minha empresa de desenvolvimento sob medida. Atendo empresas e profissionais que precisam de um sistema feito para o processo deles, e não o contrário.',
+          brand: 'qavah',
+          body: 'Minha empresa de desenvolvimento sob medida, para empresas e profissionais.',
           points: [
-            'Módulos para um SaaS B2B de gestão de contratos imobiliários.',
-            'Aplicações web sob medida para pequenas empresas.',
-            'Automação de rotinas internas, como relatórios e tarefas de back-office.',
+            'Sistemas web e SaaS',
+            'Sites e landing pages',
+            'Painéis e análise de dados',
+            'Integração entre sistemas e APIs',
+            'Automação de processos internos',
           ],
         },
         {
           org: 'Faculdade Nova Roma',
           role: 'Monitor de Desenvolvimento Mobile',
-          body: 'Apoio aos alunos da disciplina em aula e na revisão dos projetos.',
+          body: 'Apoio aos alunos em aula e na revisão dos projetos.',
         },
       ],
     },
     about: {
       title: 'Sobre',
       paragraphs: [
-        'Estou no 7º período de Ciência da Computação na Faculdade Nova Roma e desenvolvo software desde 2023. Trabalho bem nos dois lados da aplicação e gosto mais da parte que ninguém vê: modelagem de dados, integrações e o que acontece quando dois sistemas precisam conversar.',
-        'Comecei com análise de dados e análise fiscal, como autônomo. Isso me deu algo que falta em muito projeto de software: saber como o financeiro, o fiscal e a operação funcionam na prática, e conversar com quem trabalha neles.',
+        'Estou no 7º período de Ciência da Computação na Faculdade Nova Roma. Trabalho com análise de dados desde 2017 e com desenvolvimento full stack desde 2023.',
+        'A passagem pela análise fiscal me ensinou como o financeiro e a operação funcionam na prática. É o que eu levo para cada sistema que construo.',
       ],
       stackTitle: 'Com o que trabalho',
       stack: [
@@ -157,7 +162,7 @@ export const content: Record<Lang, Content> = {
     },
     contact: {
       title: 'Contato',
-      body: 'Um projeto, uma conversa técnica ou uma ideia que precisa sair do papel. Respondo por e-mail.',
+      body: 'Projetos ou conversas técnicas. Respondo por e-mail.',
       email: 'pedrolimab26@gmail.com',
     },
     footer: 'Pedro Lima, Recife. Identidade visual da Qavah IO.',
@@ -167,8 +172,8 @@ export const content: Record<Lang, Content> = {
     nav: { projects: 'Work', experience: 'Experience', about: 'About', contact: 'Contact' },
     langLabel: 'Language',
     hero: {
-      lead: 'Full-stack developer in Recife, Brazil. I build web systems, APIs and integrations that a company runs on every day.',
-      sub: 'Before code, I worked in tax analysis. That is why I start every project with the process, and only then the screen.',
+      lead: 'Full-stack developer in Recife, Brazil. I build web systems, APIs and integrations for companies.',
+      sub: 'Before code, I worked in tax analysis. I start every project with the process, then the screen.',
       primary: 'See work',
       secondary: 'Get in touch',
     },
@@ -176,23 +181,23 @@ export const content: Record<Lang, Content> = {
       title: 'Work',
       items: [
         {
-          title: 'Finance modules for a real estate contracts SaaS',
-          context: 'Freelance through Qavah, 2026',
-          body: 'I built the finance module, the commercial rooms flow and the client area of a B2B platform that manages commercial property contracts. Entries per contract, multiple revenue lines and an area where each client only sees their own data, enforced by database rules.',
-          stack: ['React', 'TypeScript', 'PostgreSQL', 'Edge Functions'],
-          note: 'Client project, private code.',
+          title: 'B2B contract management SaaS',
+          context: 'Freelance, 2026',
+          body: 'Finance modules and client area for a management platform.',
+          stack: saasStack,
+          note: 'Private code.',
         },
         {
           title: 'Accessibility platform for schools',
-          context: 'Winning project at my university hackathon',
-          body: 'A system that helps teachers create and adapt material for students with autism and ADHD. Built by a team of four within the hackathon deadline. I worked across the whole application, front to back.',
-          stack: ['React', 'Node.js'],
+          context: 'University hackathon winner',
+          body: 'Helps teachers adapt material for students with autism and ADHD. Built by a team of four.',
+          stack: hackStack,
         },
         {
           title: 'RVL Grupo company website',
           context: 'Front-end, 2024',
-          body: 'Website for a surface treatment and naval painting company. I owned the front-end: responsive layout, performance and how each service is presented to buyers.',
-          stack: ['HTML', 'CSS', 'JavaScript', 'Java', 'Spring Boot'],
+          body: 'Website for a naval painting company. I owned the front-end.',
+          stack: rvlStack,
           links: rvlLinks,
         },
       ],
@@ -205,22 +210,21 @@ export const content: Record<Lang, Content> = {
           org: 'Hubvision',
           role: 'Software developer',
           period: '2026 to now',
-          body: 'Building and maintaining web systems, ERP integrations and AI solutions for internal operations and the company’s clients.',
-          points: [
-            'Rolling out systems with clients, including support and on-site visits, regardless of account size.',
-            'From requirements gathering to running in production.',
-          ],
+          brand: 'hubvision',
+          body: 'Web systems, integrations and AI solutions for the company’s operations and clients.',
         },
         {
           org: 'Qavah IO',
           role: 'Founder',
           period: '2023 to now',
-          qavah: true,
-          body: 'My custom software studio. I work with companies and professionals who need a system built around their process, not the other way around.',
+          brand: 'qavah',
+          body: 'My custom software studio, for companies and professionals.',
           points: [
-            'Modules for a B2B real estate contract management SaaS.',
-            'Custom web applications for small businesses.',
-            'Automation of internal routines such as reports and back-office tasks.',
+            'Web systems and SaaS',
+            'Websites and landing pages',
+            'Dashboards and data analysis',
+            'System and API integration',
+            'Internal process automation',
           ],
         },
         {
@@ -233,8 +237,8 @@ export const content: Record<Lang, Content> = {
     about: {
       title: 'About',
       paragraphs: [
-        'I am in the 7th semester of Computer Science at Faculdade Nova Roma and have been building software since 2023. I am comfortable on both sides of an application and like the part nobody sees best: data modeling, integrations and what happens when two systems need to talk.',
-        'I started out in data analysis and tax analysis as a freelancer. That gave me something many software projects lack: knowing how finance, tax and operations actually work, and being able to talk to the people who run them.',
+        'I am in the 7th semester of Computer Science at Faculdade Nova Roma. I have worked with data analysis since 2017 and with full-stack development since 2023.',
+        'My time in tax analysis taught me how finance and operations really work. I bring that to every system I build.',
       ],
       stackTitle: 'What I work with',
       stack: [
@@ -253,7 +257,7 @@ export const content: Record<Lang, Content> = {
     },
     contact: {
       title: 'Contact',
-      body: 'A project, a technical conversation or an idea that needs to get built. I reply by email.',
+      body: 'Projects or technical conversations. I reply by email.',
       email: 'pedrolimab26@gmail.com',
     },
     footer: 'Pedro Lima, Recife. Visual identity by Qavah IO.',
@@ -263,8 +267,8 @@ export const content: Record<Lang, Content> = {
     nav: { projects: 'Proyectos', experience: 'Experiencia', about: 'Sobre mí', contact: 'Contacto' },
     langLabel: 'Idioma',
     hero: {
-      lead: 'Desarrollador full stack en Recife, Brasil. Construyo sistemas web, APIs e integraciones que la operación de una empresa usa todos los días.',
-      sub: 'Antes del código, trabajé en análisis fiscal. Por eso empiezo cada proyecto por el proceso, y solo después por la pantalla.',
+      lead: 'Desarrollador full stack en Recife, Brasil. Construyo sistemas web, APIs e integraciones para empresas.',
+      sub: 'Antes del código, trabajé en análisis fiscal. Empiezo cada proyecto por el proceso, después por la pantalla.',
       primary: 'Ver proyectos',
       secondary: 'Hablemos',
     },
@@ -272,23 +276,23 @@ export const content: Record<Lang, Content> = {
       title: 'Proyectos',
       items: [
         {
-          title: 'Módulos financieros para un SaaS de contratos inmobiliarios',
-          context: 'Freelance a través de Qavah, 2026',
-          body: 'Desarrollé el módulo financiero, el flujo de salas comerciales y el área del cliente de una plataforma B2B que gestiona contratos de inmuebles comerciales. Movimientos por contrato, varias líneas de ingreso y un acceso en el que cada cliente ve solo sus propios datos, garantizado por reglas en la base de datos.',
-          stack: ['React', 'TypeScript', 'PostgreSQL', 'Edge Functions'],
-          note: 'Proyecto bajo contrato, código privado.',
+          title: 'SaaS B2B de gestión de contratos',
+          context: 'Freelance, 2026',
+          body: 'Módulos financieros y área del cliente de una plataforma de gestión.',
+          stack: saasStack,
+          note: 'Código privado.',
         },
         {
           title: 'Plataforma de accesibilidad para escuelas',
-          context: 'Proyecto ganador del hackathon de la universidad',
-          body: 'Sistema que ayuda a los profesores a crear y adaptar contenido para alumnos con TEA y TDAH. Hecho por un equipo de cuatro personas dentro del plazo del hackathon. Trabajé en toda la aplicación, del front al back.',
-          stack: ['React', 'Node.js'],
+          context: 'Ganador del hackathon de la universidad',
+          body: 'Ayuda a los profesores a adaptar contenido para alumnos con TEA y TDAH. Hecha en equipo de cuatro.',
+          stack: hackStack,
         },
         {
           title: 'Sitio institucional de RVL Grupo',
           context: 'Front-end, 2024',
-          body: 'Sitio de una empresa de tratamiento de superficies y pintura naval. Me encargué de todo el front-end: diseño responsivo, rendimiento y la forma en que se presenta cada servicio.',
-          stack: ['HTML', 'CSS', 'JavaScript', 'Java', 'Spring Boot'],
+          body: 'Sitio de una empresa de pintura naval. Responsable del front-end.',
+          stack: rvlStack,
           links: rvlLinks,
         },
       ],
@@ -301,36 +305,35 @@ export const content: Record<Lang, Content> = {
           org: 'Hubvision',
           role: 'Desarrollador de software',
           period: '2026 hasta hoy',
-          body: 'Desarrollo y mantenimiento de sistemas web, integraciones con ERP y soluciones con IA para la operación interna y los clientes de la empresa.',
-          points: [
-            'Implementación con los clientes, con soporte y visitas presenciales, sin importar el tamaño de la cuenta.',
-            'Desde el levantamiento de requisitos hasta la operación en producción.',
-          ],
+          brand: 'hubvision',
+          body: 'Sistemas web, integraciones y soluciones con IA para la operación y los clientes de la empresa.',
         },
         {
           org: 'Qavah IO',
           role: 'Fundador',
           period: '2023 hasta hoy',
-          qavah: true,
-          body: 'Mi empresa de desarrollo a medida. Trabajo con empresas y profesionales que necesitan un sistema hecho para su proceso, y no al revés.',
+          brand: 'qavah',
+          body: 'Mi empresa de desarrollo a medida, para empresas y profesionales.',
           points: [
-            'Módulos para un SaaS B2B de gestión de contratos inmobiliarios.',
-            'Aplicaciones web a medida para pequeñas empresas.',
-            'Automatización de rutinas internas, como reportes y tareas de back-office.',
+            'Sistemas web y SaaS',
+            'Sitios y landing pages',
+            'Paneles y análisis de datos',
+            'Integración entre sistemas y APIs',
+            'Automatización de procesos internos',
           ],
         },
         {
           org: 'Faculdade Nova Roma',
           role: 'Monitor de Desarrollo Mobile',
-          body: 'Apoyo a los alumnos de la materia en clase y en la revisión de proyectos.',
+          body: 'Apoyo a los alumnos en clase y en la revisión de proyectos.',
         },
       ],
     },
     about: {
       title: 'Sobre mí',
       paragraphs: [
-        'Estoy en el 7º semestre de Ciencias de la Computación en la Faculdade Nova Roma y desarrollo software desde 2023. Me muevo bien en los dos lados de una aplicación y disfruto más la parte que nadie ve: modelado de datos, integraciones y lo que pasa cuando dos sistemas necesitan hablar.',
-        'Empecé con análisis de datos y análisis fiscal, como independiente. Eso me dio algo que le falta a muchos proyectos de software: saber cómo funcionan en la práctica las finanzas, lo fiscal y la operación, y hablar con quienes trabajan en ellos.',
+        'Estoy en el 7º semestre de Ciencias de la Computación en la Faculdade Nova Roma. Trabajo con análisis de datos desde 2017 y con desarrollo full stack desde 2023.',
+        'Mi paso por el análisis fiscal me enseñó cómo funcionan en la práctica las finanzas y la operación. Es lo que llevo a cada sistema que construyo.',
       ],
       stackTitle: 'Con qué trabajo',
       stack: [
@@ -349,7 +352,7 @@ export const content: Record<Lang, Content> = {
     },
     contact: {
       title: 'Contacto',
-      body: 'Un proyecto, una conversación técnica o una idea que necesita salir del papel. Respondo por correo.',
+      body: 'Proyectos o conversaciones técnicas. Respondo por correo.',
       email: 'pedrolimab26@gmail.com',
     },
     footer: 'Pedro Lima, Recife. Identidad visual de Qavah IO.',

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { content, links, type Lang } from './content';
 import { Cord, QMark } from './Marks';
+import hubvisionLogo from '@/images/hubvision.png';
 
 const LANGS: Lang[] = ['pt', 'en', 'es'];
 const HTML_LANG: Record<Lang, string> = { pt: 'pt-BR', en: 'en', es: 'es' };
@@ -115,11 +116,14 @@ export default function Site() {
             </h2>
             <ol className="timeline">
               {t.experience.items.map((job) => (
-                <li key={job.org} className={job.qavah ? 'job job-qavah' : 'job'}>
+                <li key={job.org} className={job.brand ? `job job-brand job-${job.brand}` : 'job'}>
+                  {job.brand === 'hubvision' && (
+                    <img className="job-logo" src={hubvisionLogo.src} alt="" width={320} height={60} />
+                  )}
                   <div className="job-head">
-                    {job.qavah && <QMark className="job-mark" title="Qavah IO" />}
+                    {job.brand === 'qavah' && <QMark className="job-mark" />}
                     <div>
-                      <h3 className="job-org">{job.org}</h3>
+                      <h3 className={job.brand === 'hubvision' ? 'job-org sr-only' : 'job-org'}>{job.org}</h3>
                       <p className="job-role">
                         {job.role}
                         {job.period && <span className="job-period">{job.period}</span>}
@@ -134,7 +138,7 @@ export default function Site() {
                       ))}
                     </ul>
                   )}
-                  {job.qavah && (
+                  {job.brand === 'qavah' && (
                     <a className="job-link" href={links.qavah} target="_blank" rel="noreferrer">
                       {t.experience.qavahLink}
                     </a>

@@ -476,24 +476,49 @@ a {
   background: currentColor;
 }
 
-/* a Qavah ganha a cor da marca dentro da linha do tempo */
+/* blocos com a cor de cada marca dentro da linha do tempo */
+.job-brand {
+  padding: 32px;
+  margin: 0 0 40px -12px;
+  border-radius: 6px;
+}
+.job-brand::before {
+  left: -19px;
+  top: 46px;
+  width: 19px;
+}
+.job-brand .job-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  column-gap: 40px;
+}
+
 .job-qavah {
   --mark-halo: var(--straw);
   background: var(--straw);
   color: var(--indigo);
-  padding: 32px 32px 32px;
-  margin: 0 0 56px -12px;
-  border-radius: 6px;
-}
-.job-qavah::before {
-  left: -19px;
-  top: 46px;
-  width: 19px;
 }
 .job-qavah .job-role,
 .job-qavah .job-period {
   color: rgba(30, 42, 94, 0.8);
 }
+
+.job-hubvision {
+  --hv-blue: #1a4ba8;
+  background: var(--hv-blue);
+  color: #fff;
+}
+.job-hubvision .job-role,
+.job-hubvision .job-period {
+  color: rgba(255, 255, 255, 0.78);
+}
+.job-logo {
+  display: block;
+  height: 34px;
+  width: auto;
+  margin-bottom: 14px;
+}
+
 .job-mark {
   width: 56px;
   height: 56px;
@@ -507,6 +532,15 @@ a {
   text-decoration-color: var(--indigo);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 @media (max-width: 760px) {
   .timeline {
     padding-left: 28px;
@@ -518,13 +552,16 @@ a {
     left: -25px;
     width: 18px;
   }
-  .job-qavah {
+  .job-brand {
     padding: 24px 20px;
     margin-left: -6px;
   }
-  .job-qavah::before {
+  .job-brand::before {
     left: -19px;
     width: 19px;
+  }
+  .job-brand .job-points {
+    grid-template-columns: 1fr;
   }
 }
 

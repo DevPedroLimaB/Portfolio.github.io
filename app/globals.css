@@ -326,7 +326,7 @@ a {
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: 8px 48px;
-  padding: 36px 0;
+  padding: 28px 0;
   border-top: 2px solid var(--text);
 }
 .project:last-child {
@@ -487,10 +487,43 @@ a {
   top: 46px;
   width: 19px;
 }
-.job-brand .job-points {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, max-content));
-  column-gap: 40px;
+.job-highlight {
+  margin-top: 22px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+.job-highlight strong {
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.job-highlight span {
+  font-size: 16px;
+  max-width: 30ch;
+  line-height: 1.35;
+  opacity: 0.85;
+}
+
+.job-sub {
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.job-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.job-services li {
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .job-qavah {
@@ -560,9 +593,6 @@ a {
     left: -19px;
     width: 19px;
   }
-  .job-brand .job-points {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* sobre */
@@ -594,7 +624,7 @@ a {
 
 .stack-row {
   display: grid;
-  grid-template-columns: 96px 1fr;
+  grid-template-columns: 132px 1fr;
   gap: 12px;
   padding: 10px 0;
   border-top: 1px solid var(--line);

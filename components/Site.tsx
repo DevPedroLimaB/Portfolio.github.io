@@ -130,6 +130,12 @@ export default function Site() {
                       </p>
                     </div>
                   </div>
+                  {job.highlight && (
+                    <p className="job-highlight">
+                      <strong>{job.highlight.value}</strong>
+                      <span>{job.highlight.label}</span>
+                    </p>
+                  )}
                   <p className="job-body">{job.body}</p>
                   {job.points && (
                     <ul className="job-points">
@@ -137,6 +143,16 @@ export default function Site() {
                         <li key={pt}>{pt}</li>
                       ))}
                     </ul>
+                  )}
+                  {job.services && (
+                    <>
+                      <h4 className="job-sub">{t.experience.servicesTitle}</h4>
+                      <ul className="job-services">
+                        {job.services.map((sv) => (
+                          <li key={sv}>{sv}</li>
+                        ))}
+                      </ul>
+                    </>
                   )}
                   {job.brand === 'qavah' && (
                     <a className="job-link" href={links.qavah} target="_blank" rel="noreferrer">

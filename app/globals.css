@@ -35,7 +35,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 72px;
+  scroll-padding-top: 96px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -104,14 +104,45 @@ a {
   z-index: 50;
   background: var(--straw);
   color: var(--indigo);
-  border-bottom: 1px solid rgba(30, 42, 94, 0.15);
 }
 
 .topbar-inner {
   display: flex;
   align-items: center;
   gap: 32px;
-  height: 64px;
+  height: 56px;
+}
+
+/* cordão de progresso: o Q anda até o fim conforme a página rola */
+.scroll-cord {
+  position: relative;
+  height: 26px;
+  color: var(--indigo);
+}
+.scroll-cord-rest,
+.scroll-cord-fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  height: 3px;
+}
+.scroll-cord-rest {
+  background: rgba(30, 42, 94, 0.22);
+}
+.scroll-cord-fill {
+  background: currentColor;
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+.scroll-cord-loop {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  /* y=90 de 120 no SVG cai sobre a linha (bottom 6px + 1.5px) */
+  height: 30px;
+  width: 35px;
+  will-change: transform;
 }
 
 .brand {
@@ -179,7 +210,7 @@ a {
 }
 
 .hero-name {
-  font-size: clamp(64px, 13vw, 168px);
+  font-size: clamp(46px, 15vw, 168px);
   line-height: 0.9;
   font-weight: 800;
   letter-spacing: -0.055em;

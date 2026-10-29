@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { content, links, type Lang } from './content';
 import { Cord, QMark } from './Marks';
 import hubvisionLogo from '@/images/hubvision.png';
+import ScrollCord from './ScrollCord';
 
 const LANGS: Lang[] = ['pt', 'en', 'es'];
 const HTML_LANG: Record<Lang, string> = { pt: 'pt-BR', en: 'en', es: 'es' };
@@ -56,6 +57,9 @@ export default function Site() {
               </button>
             ))}
           </div>
+        </div>
+        <div className="wrap">
+          <ScrollCord />
         </div>
       </header>
 

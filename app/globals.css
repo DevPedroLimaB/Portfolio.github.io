@@ -105,6 +105,14 @@ a {
   background: var(--straw);
   color: var(--indigo);
 }
+/* vidro: o conteúdo que passa por baixo do topo fica desfocado */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .topbar {
+    background: rgba(227, 185, 74, 0.72);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    backdrop-filter: blur(16px) saturate(1.4);
+  }
+}
 
 .topbar-inner {
   display: flex;

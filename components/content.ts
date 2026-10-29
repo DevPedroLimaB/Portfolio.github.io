@@ -76,7 +76,7 @@ const rvlLinks = [
 ];
 
 const st = {
-  billing: ['React', 'TypeScript', 'PostgreSQL'],
+  billing: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'APIs REST'],
   portal: ['React', 'PostgreSQL', 'Tailwind CSS'],
   erp: ['SQL', 'APIs REST', 'TOTVS Protheus'],
   ai: ['LLMs', 'Node.js', 'APIs REST'],
@@ -100,8 +100,8 @@ export const content: Record<Lang, Content> = {
       items: [
         {
           title: 'Sistema de disparo de cobranças',
-          context: 'Hubvision',
-          body: 'Front-end de um sistema que chega a emitir R$ 200 mil em boletos em um único dia. Quadro de inadimplência, réguas configuráveis e agendamento de disparos.',
+          context: 'Hubvision, full stack',
+          body: 'Desenvolvi o sistema inteiro, do front ao back e às integrações. Chega a emitir R$ 200 mil em boletos em um único dia, com quadro de inadimplência, réguas configuráveis e agendamento de disparos.',
           stack: st.billing,
         },
         {
@@ -242,8 +242,8 @@ export const content: Record<Lang, Content> = {
       items: [
         {
           title: 'Billing dispatch system',
-          context: 'Hubvision',
-          body: 'Front-end of a system that issues up to R$ 200k in invoices in a single day. Overdue board, configurable reminder flows and scheduled dispatches.',
+          context: 'Hubvision, full stack',
+          body: 'I built the whole system, front end, back end and integrations. It issues up to R$ 200k in invoices in a single day, with an overdue board, configurable reminder flows and scheduled dispatches.',
           stack: st.billing,
         },
         {
@@ -384,8 +384,8 @@ export const content: Record<Lang, Content> = {
       items: [
         {
           title: 'Sistema de envío de cobros',
-          context: 'Hubvision',
-          body: 'Front-end de un sistema que llega a emitir R$ 200 mil en boletos en un solo día. Tablero de morosidad, flujos configurables y envíos programados.',
+          context: 'Hubvision, full stack',
+          body: 'Desarrollé el sistema completo, front, back e integraciones. Llega a emitir R$ 200 mil en boletos en un solo día, con tablero de morosidad, flujos configurables y envíos programados.',
           stack: st.billing,
         },
         {
